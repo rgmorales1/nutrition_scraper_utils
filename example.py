@@ -1,4 +1,5 @@
 from utils import AuthRequests, ProductRequests, NutritionRequests
+import settings
 
 auth = AuthRequests()
 
@@ -7,9 +8,10 @@ product_request = ProductRequests()
 nutrition_request = NutritionRequests()
 
 
+rut = settings.USER_RUT
+password = settings.USER_PASSWORD
 
-
-auth_response = auth.login(00000000, "password")
+auth_response = auth.login(rut, password)
 
 access = auth_response.json()["access"]
 
